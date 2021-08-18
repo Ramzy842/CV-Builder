@@ -1,38 +1,206 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+#root {
+  background: rgb(158, 173, 173);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.container {
+  margin: 0 auto;
+  max-width: 90vw;
   min-height: 100vh;
+  height: auto;
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: 1fr 2fr;
+}
+
+.general {
+  background: rgb(21, 163, 168);
   display: flex;
+  align-items: center;
   flex-direction: column;
+}
+
+.general button {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.image {
+  margin-top: 2rem;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: 3px solid;
+}
+
+.general span {
+  display: none;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  top: -200px;
+  position: relative;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background: rgba(121, 121, 121, 0.8);
+  border: 4px solid;
+  font-size: 1.8rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.url {
+  margin-top: 1rem;
+  width: 60%;
+  padding: 0.4rem;
+  outline: none;
+  display: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.generalInfo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  border-radius: 20px;
+  height: auto;
+  width: 90%;
+  padding: 1rem;
+  background-color: rgb(12, 87, 90);
+}
+
+.generalInfo h4 {
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.generalInfo p {
+  position: absolute;
+  background: rgb(175, 189, 211);
+  padding: 0 1rem;
+  right: 20px;
+  text-align: center;
+  cursor: pointer;
+  display: none;
+}
+
+.editable {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: none;
+  flex-direction: column;
+}
+
+.experience {
+  display: grid;
+  grid-template-rows: auto auto;
+}
+
+.EducationalExp,
+.practicalExp {
+  height: auto;
+  width: 100%;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.EducationalExp .header,
+.practicalExp .header {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.EducationalExp .header button,
+.practicalExp .header button {
+  color: #fff;
+  background: rgb(21, 92, 206);
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+  cursor: pointer;
+  display: none;
+}
+
+.EducationalExp h1,
+.practicalExp h1 {
+  margin-bottom: 0.5rem;
+}
+
+.EducationalExp {
+  background: rgb(201, 201, 238);
+}
+
+.modify {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.school,
+.job {
+  width: 90%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.school {
+  background: rgb(175, 189, 211);
+  position: relative;
+}
+
+.editSchoolInfo,
+.editJoblInfo {
+  color: #fff;
+  background: rgb(36, 36, 36);
+  padding: 0 1rem;
+  margin-right: 1rem;
+  text-align: center;
+  cursor: pointer;
+  display: none;
+}
+
+.saveSchoolInfo,
+.saveJoblInfo {
+  color: #fff;
+  background: rgb(0, 92, 197);
+  padding: 0 1rem;
+  margin-right: 1rem;
+  text-align: center;
+  cursor: pointer;
+  display: none;
+}
+
+.deleteSchool,
+.deleteJob {
+  color: #fff;
+  background: rgb(255, 25, 62);
+  padding: 0 1rem;
+  text-align: center;
+  cursor: pointer;
+  display: none;
+}
+
+.job {
+  background: rgb(90, 90, 90);
+  position: relative;
+}
+
+.practicalExp {
+  background: rgb(121, 121, 121);
 }
